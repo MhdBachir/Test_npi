@@ -15,8 +15,8 @@ The primary goal of this project is to provide a solution for evaluating mathema
 1. **Clone the Repository**:
 
     ```bash
-    git clone https://github.com/yourusername/reverse-polish-notation-solver.git
-    cd reverse-polish-notation-solver
+    git clone https://github.com/MhdBachir/Test_npi.git
+    cd Test_npi
     ```
 
 2. **Run the Application**:
@@ -25,19 +25,32 @@ The primary goal of this project is to provide a solution for evaluating mathema
     uvicorn app.main:app --host 0.0.0.0 --port 7000
     ```
 
-3. **Use the API Endpoint**:
+3. **Utiliser le point de terminaison de l'API**:
 
-    Send a POST request to `http://localhost:7000/evaluate/` with a JSON payload containing the RPN expression. For example:
+    Envoyez une requête POST à `http://localhost:7000/calculate/` avec une charge JSON contenant l'expression RPN. Par exemple :
 
     ```json
     {"expression": "3 4 + 2 *"}
     ```
 
-    The server will respond with the calculated result.
+    Le serveur répondra avec le résultat calculé. Vous pouvez également utiliser l'interface interactive de la documentation Swagger en accédant à `http://localhost:7000/api/v1/docs` pour tester l'API avec différentes expressions.
+
+4. **Télécharger les opérations enregistrées au format CSV**:
+
+    Pour récupérer toutes les opérations enregistrées dans la base de données sous forme de fichier CSV, envoyez une requête GET à `http://localhost:7000/download/`. Le serveur répondra avec un fichier CSV téléchargeable contenant les expressions et les résultats des opérations enregistrées.
+
+    Par exemple, vous pouvez utiliser un outil tel que curl pour télécharger le fichier depuis la ligne de commande :
+
+    ```bash
+    curl -OJ http://localhost:7000/download/
+    ```
+
+    Assurez-vous d'avoir les autorisations appropriées pour accéder aux opérations enregistrées. Si nécessaire, ajustez les paramètres d'autorisation dans votre application FastAPI.
+
 
 ## API Endpoint Example
 
-- **Endpoint**: `/evaluate/`
+- **Endpoint**: `/evaluate/` , `/download/`
 
 - **Method**: POST
 
