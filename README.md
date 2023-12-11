@@ -73,7 +73,7 @@ This project includes Docker support for easy deployment. Use the provided Docke
 ```bash
 docker-compose build
 docker-compose up
-
+```
 
 
 port 8180
