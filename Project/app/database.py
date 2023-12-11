@@ -7,7 +7,7 @@ from API.config import mongodb_url
 client = MongoClient(mongodb_url, server_api=ServerApi('1'))
 
 
-
+# Function that store  operations and the result in the database
 def store_operation(expression, result):
     """Stores the operation and result in the database."""
     # Create a new document to be inserted
@@ -20,8 +20,7 @@ def store_operation(expression, result):
     print("Successfully inserted a document into the database.")
 
 
-# Create a function to retrieve the operations from the database
-
+# Function that retrieve the operations from the database
 def retrieve_operations():
     """Retrieves the operations from the database."""
     # Retrieve the documents from the database

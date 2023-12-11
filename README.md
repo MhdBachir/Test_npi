@@ -52,7 +52,7 @@ The primary goal of this project is to provide a solution for evaluating mathema
 
 - **Endpoint**: `/evaluate/` , `/download/`
 
-- **Method**: POST
+- **Method**: POST , GET
 
 - **Request Payload**:
 
