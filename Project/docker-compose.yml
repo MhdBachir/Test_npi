@@ -1,0 +1,19 @@
+version: '3'
+services:
+  fastapi-app:
+    build:
+      context: .
+    ports:
+      - "8180:7000"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    command: >-
+      sh -c 'exec mongod --quiet > /dev/null 2>&1'  
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
